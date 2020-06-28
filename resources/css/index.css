@@ -1,0 +1,8 @@
+test {
+    border: 1px solid black;
+}
+
+#nes-canvas {
+    width: 800px;
+    height: 600px;
+}

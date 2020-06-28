@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="resources/css/index.css">
+      <title>Cat Coding</title>
+	  <script type="text/javascript" src="resources/js/jsnes.min.js"></script>
+	  <script type="text/javascript" src="resources/js/nes-embed.js"></script>
+	  <script>
+      if(window.acquireVsCodeApi) {
+        const vscode = acquireVsCodeApi()
+      } else {
+          const vscode = null;
+      }
+      vsAlert('ok')
+	  function vsAlert(message) {
+        if(window.vscode) {
+            vscode.postMessage({
+                command: 'alert',
+                text: message
+            })
+        }
+	  }
+	  window.onload = function(){
+		  nes_load_url("nes-canvas", "resources/nes/Super Mario Bros. (W) [!].nes");
+		}
+	  </script>
+  </head>
+  <body>
+
+  <div style="margin: auto; width: 75%;  border: 1px solid black;">
+  <canvas id="nes-canvas" width="256" height="240" />
+</div>
+<p>DPad: Arrow keys<br/>Start: Return, Select: Tab<br/>A Button: A, B Button: S</p>
+
+  </body>
+  </html>
